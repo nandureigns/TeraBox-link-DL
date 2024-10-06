@@ -52,13 +52,13 @@ const checkSubscription = async (userId) => {
 };
 
 const sendStartMessage = (chatId) => {
-    bot.sendPhoto(chatId, 'https://i.imgur.com/6cUMqLc.jpeg', {
+    bot.sendPhoto(chatId, 'https://envs.sh/Sk8.jpg', {
         caption: `👋 *Welcome to TeraBox Video Player Bot!*\n\n*Paste your TeraBox link and watch your video instantly—no TeraBox app needed!*\n\nPlease subscribe to our [Updates Channel](https://t.me/Opleech_WD) and click /start again to begin using the bot.`,
         parse_mode: 'Markdown',
         reply_markup: {
             inline_keyboard: [
-                [{ text: 'Join Channel to Use Me', url: 'https://t.me/Opleech_WD' }],
-                [{ text: 'How to use Bot', url: 'https://t.me/WOODcraft_Mirror_Zone/43' }]
+                [{ text: 'Join Channel to Use Me', url: 'https://t.me/KnMoviez' }],
+                [{ text: 'How to use Bot', url: 'https://t.me/KnMoviez' }]
             ]
         }
     });
@@ -69,13 +69,13 @@ bot.onText(/\/start/, async (msg) => {
     try {
         const isSubscribed = await checkSubscription(chatId);
         if (isSubscribed) {
-            const photoUrl = 'https://i.imgur.com/rzorSxY.jpeg';
+            const photoUrl = 'https://envs.sh/Sk8.jpg';
             bot.sendPhoto(chatId, photoUrl, {
                 caption: `🎉 *Welcome back!* 😊\n\n*Send a TeraBox link to watch or download your video.* 🍿`,
                 parse_mode: 'Markdown',
                 reply_markup: {
                     inline_keyboard: [
-                        [{ text: "Any Help?", url: "https://t.me/+XfmrBSzTyRFlZTI9" }]
+                        [{ text: "Any Help?", url: "https://t.me/KnMoviez" }]
                     ]
                 }
             });
@@ -99,7 +99,7 @@ bot.onText(/\/stat/, async (msg) => {
             { $count: "count" }
         ]).toArray();
 
-        bot.sendPhoto(chatId, 'https://i.imgur.com/H91ehBY.jpeg', {
+        bot.sendPhoto(chatId, 'https://envs.sh/Sk8.jpg', {
             caption: `📊 *Current Bot Stats:*\n\n👥 *Total Users:* ${userCount}\n🔗 *Links Processed:* ${linkCount[0]?.count || 0}`,
             parse_mode: 'Markdown',
             reply_markup: {
@@ -168,7 +168,7 @@ bot.on('message', async (msg) => {
         const existingLink = userLinks.find(linkData => linkData.original === text);
 
         if (existingLink) {
-            bot.sendPhoto(chatId, 'https://i.imgur.com/rzorSxY.jpeg', {
+            bot.sendPhoto(chatId, 'https://envs.sh/Sk8.jpg', {
                 caption: `✅ *Your video is ready!*\n\n📥 *Click the button below to view or download it.*`,
                 parse_mode: 'Markdown',
                 reply_markup: {
